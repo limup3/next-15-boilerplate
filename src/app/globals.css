@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+}
+
+@layer utilities {
+  /* 장바구니 뱃지: 숫자 변경 시 한 번만 튀어오르는 애니메이션 */
+  .animate-bounce-once {
+    animation: badge-pop 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  }
+
+  @keyframes badge-pop {
+    0%   { transform: scale(0.5); opacity: 0; }
+    60%  { transform: scale(1.25); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  /* 토스트: 상단 중앙에서 아래로 슬라이드 인 */
+  .animate-toast-in {
+    animation: toast-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes toast-in {
+    0%   { transform: translateX(-50%) translateY(-120%); opacity: 0; }
+    100% { transform: translateX(-50%) translateY(0);     opacity: 1; }
+  }
+}
