@@ -1,4 +1,4 @@
-영역	선택
+기술스택
 
 Framework	Next.js 15 (App Router)
 
